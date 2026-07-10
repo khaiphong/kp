@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --base-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #ffc06e;
+  --secondary-color: #8D8DFF;
+  --color-1: #F9F6F3;
+  --color-2: #F3F7F9;
+  --color-3: #F6F3F9;
+  --color-4: yellow;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+}
+
+body {
+  padding: 1em;
+  background-color: var(--base-color);
+  p {
+        line-height: 1.5; /* 1.5 times the font size */
+    }
+}
+
+h1, h2, h3 {
+  font-family: Merriweather, Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main main right'
+    'footer footer footer footer footer footer';
+  gap: 10px;
+  background-color: white;
+  padding: 10px;
+}
+
+.grid-container > div {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.item1 {
+  grid-area: header;
+  background-color: #b300b3;
+  text-align: center;
+  color: #ffffff;
+}
+
+.item1 > h1 {
+  font-size: 20px;
+}
+
+.item2 {
+  grid-area: menu;
+}
+  
+.item2 ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item2 li {
+  padding: 8px;
+  margin-bottom: 9px;
+  background-color: #33b5e5;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.item2 li:hover {
+  background-color: #0099cc;
+  text-decoration: underline;
+}
+
+.item2 a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.item2 a:hover {
+  text-decoration: underline;
+}
+
+.item3 {
+  grid-area: main;
+  background-color: white;
+  padding: 15px;
+  color: #000000;
+}
+
+.item3 > h1 {
+  font-size: 35px;
+  margin-bottom: 18px;
+  color: #d46008;
+}
+
+.item3 > p {
+  margin-bottom: 21px;
+  padding: 21px;
+}
+
+.item3 > nav {
+  margin: 1em auto 3em auto;
+  width: min(1000px, 100%);
+}
+
+.item3 > nav ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  gap: 2em;
+}
+
+.item3 > nav li:first-child {
+  font-family: Merriweather, Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.item3 > nav a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.item3 > nav a:hover {
+  text-decoration: underline;
+}
+
+.item3 > section {
+  margin: 0em auto;
+  width: min(75em, 100%);
+  background-color: var(--base-color);
+  padding: min(0em, 15%);
+  border-radius: 1em;
+}
+
+.item3 > section a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.item3 > section a:hover {
+  text-decoration: underline;
+}
+
+
+.item4 {
+  grid-area: right;
+  border: 2px solid #0099cc;
+  background-color: white;
+  padding: 15px;
+  color: #000000;
+}
+
+.item4 > h2 {
+  padding: 8px;
+  margin-bottom: 7px;
+  padding-bottom: 10px;
+  background-color: white;
+  color: #0099cc;
+}
+
+.item4 li {
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.item4 a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.item4 a:hover {
+  text-decoration: underline;
+}
+
+.item5 {
+  grid-area: footer;
+  background-color: #d46008;
+  color: #ffffff;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .item1 {grid-area: 1 / span 6;}
+  .item2 {grid-area: 2 / span 6;}
+  .item3 {grid-area: 3 / span 6;}
+  .item4 {grid-area: 4 / span 6;}
+  .item5 {grid-area: 5 / span 6;}
+}
+
+@media only screen and (min-width: 600px) {
+  .item1 {grid-area: 1 / span 6;}
+  .item2 {grid-area: 2 / span 1;}
+  .item3 {grid-area: 2 / span 4;}
+  .item4 {grid-area: 3 / span 6;}
+  .item5 {grid-area: 4 / span 6;}
+}
+
+@media only screen and (min-width: 768px) {
+  .item1 {grid-area: 1 / span 6;}
+  .item2 {grid-area: 2 / span 1;}
+  .item3 {grid-area: 2 / span 4;}
+  .item4 {grid-area: 2 / span 1;}
+  .item5 {grid-area: 3 / span 6;}
+}
+
